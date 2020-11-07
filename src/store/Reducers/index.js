@@ -10,6 +10,11 @@ export default (state = INITIAL_STATE,action) => {
                 ...state,
                 current_user: action.payload
             })
+        case "SETFIREBASEUSERS":
+            return ({
+                ...state,
+                users: action.payload
+            })
     }
     return state;
 }
