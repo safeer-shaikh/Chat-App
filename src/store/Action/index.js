@@ -1,16 +1,16 @@
 import Firebase from '../../config/firebase'
 import firebase from 'firebase/app'
 
-const set_data = ()=>{
-    return (dispatch)=>{
-        dispatch({
-            type: "SETDATA",
-            payload: { name: 'waleed' }
-        })
-    }
-}
+// const set_data = ()=>{
+//     return (dispatch)=>{
+//         dispatch({
+//             type: "SETDATA",
+//             payload: { name: 'waleed' }
+//         })
+//     }
+// }
 
-const facebook_login = ()=>{
+const facebook_login = (history)=>{
     return (dispatch)=>{
         var provider = new firebase.auth.FacebookAuthProvider();
 
@@ -21,7 +21,23 @@ const facebook_login = ()=>{
             // The signed-in user info.
             var user = result.user;
             // ...
-            console.log('user==>',user)
+            let create_user = {
+                name: user.displayName,
+                email: user.email,
+                profile: user.photoURL,
+                uid: user.uid
+            }
+
+            firebase.database().ref('/').child(`users/${user.uid}`).set(create_user)
+            .then(()=>{
+                dispatch({
+                    type: "SETUSER",
+                    payload: create_user
+                })
+                alert('User Login Successful!')
+                history.push('/chat')
+            })
+            // console.log('user==>',create_user)
           }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -31,7 +47,14 @@ const facebook_login = ()=>{
           });
     }
 }
+const get_users = () =>{
+    return (dispatch) => {
+        firebase.database().ref('/').child('users').on('child_added',(data)=>{
+            console.log('firebase data==>', data.val())
+        })
+    }
+}
 export {
-    set_data,
     facebook_login,
+    get_users,
 }

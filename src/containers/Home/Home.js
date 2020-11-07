@@ -8,7 +8,7 @@ class Home extends React.Component{
             <div>
                 <h1>Home page</h1>
                 {/* <button onClick={()=>this.props.set_data()} >check console</button> */}
-                <button onClick={()=>this.props.facebook_login()} >Facebook Login</button>
+                <button onClick={()=>this.props.facebook_login(this.props.history)} >Facebook Login</button>
             </div>
         )
     }
@@ -18,6 +18,6 @@ const mapStateToProps = (state) => ({
 })
 const mapDispatchToProps = (dispatch) => ({
     // set_data: ()=> dispatch(set_data()),
-    facebook_login: ()=> dispatch(facebook_login()),
+    facebook_login: (history)=> dispatch(facebook_login(history)),
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Home);
