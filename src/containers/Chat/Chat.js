@@ -1,4 +1,5 @@
 import React from 'react'
+import './chat.css'
 import {get_users} from '../../store/Action'
 import {connect} from 'react-redux'
 import firebase from '../../config/firebase'
