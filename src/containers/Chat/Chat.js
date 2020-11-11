@@ -1,5 +1,6 @@
 import React from 'react'
 import './chat.css'
+import emptyDivPic from '../../images/emptyDivPic.JPG'
 import {get_users} from '../../store/Action'
 import {connect} from 'react-redux'
 import firebase from '../../config/firebase'
@@ -62,31 +63,37 @@ class Chat extends React.Component{
     render(){
         // console.log('props==>',this.props)
         // console.log('fireabase users==>',this.props.users)
-        console.log('firebase messages==>',this.props.message)
+        // console.log('firebase messages==>',this.props.message)
         let user = this.props.current_user
         return(
-            <div>
-                <h3>Welcome {user.name} !<img src={user.profile} alt='profile picture' width='30' height='30' /></h3>
+            <div style={{height:550}}>
                 <div style={{display:'flex'}}>
-                    <div style={{backgroundColor:'grey'}}>
-                        <h3>Chat Users:</h3>
-                        <div>
+                    <div className='left-div'>
+                        <div className='left-upper-div'>
+                            <img className='user-profile' src={user.profile} alt='profile picture' width='30' height='30' />
+                            <span>{user.name}</span>
+                        </div>
+                        <h3>Users Online:</h3>
+                        <div className='left-lower-div'>
                             <ul>
                                 {this.props.users.map((v,i)=>{
                                     return(
                                         v.uid !== user.uid &&
-                                        <li key={i}>
-                                            <img src={v.profile}  alt='profile' width='20' height='20'/>
-                                            {v.name}
-                                            <button onClick={()=>this.chat(v)}>Chat</button>
-                                        </li>
+                                        <button onClick={()=>this.chat(v)}>
+                                            <li style={{display: "flex"}} key={i}>
+                                                <img src={v.profile}  alt='profile' width='20' height='20'/>
+                                                <span>
+                                                    {v.name}
+                                                </span>
+                                            </li>
+                                        </button>
                                     )
                                 })}
                             </ul>
                         </div>
                     </div>
-                    <div style={{backgroundColor:"yellow", width: 350}}>
-                        <h3>Chat</h3>
+                    <div className='right-div'>
+                        {/* <h3>Chat</h3> */}
                         {
                             Object.keys(this.state.chat_with).length ? 
                             <div>
@@ -107,7 +114,16 @@ class Chat extends React.Component{
                                 <button onClick={()=>this.send_message()}>Send</button>
                             </div>
                             :
-                            <div></div>
+                            <div>
+                                <div className='not-selected-div1'>
+                                    <center>
+                                        <img src={emptyDivPic} alt='chatting' />
+                                        <p>Stay connected to the world</p>
+                                        <div>________________________</div>
+                                        <span>You have connected Using Facebook Authentication,<br /> We will never share your personal data with anyone!</span>
+                                    </center>
+                                </div>
+                            </div>
                         }
                     </div>
                 </div>

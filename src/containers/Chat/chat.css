@@ -1,0 +1,88 @@
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.user-profile{
+    width: 47px;
+    height: 47px;
+    border-radius: 100%;
+    padding: 15px;
+}
+
+.left-div{
+    height: 700px;
+    background-color: rgba(36, 39, 73, 0.904);
+}
+
+.left-div h3{
+    margin-left: 20px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-upper-div{
+    display: flex;
+}
+
+.left-upper-div span{
+    margin-top: 28px;
+    color: #fff;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-lower-div{
+    height: 100%;
+    overflow-y: auto;
+}
+
+.left-lower-div ul{
+    padding: 0px;
+}
+
+.left-lower-div ul button{
+    border: 0px solid #fff;
+    background-color: #fff;
+    border-bottom: 1px solid lightgray;
+}
+
+.left-lower-div ul button:hover{
+    background-color: rgb(241, 240, 240);
+}
+
+.left-lower-div ul li{
+    height: 55px;
+    list-style-type: none;
+    display: list-item;
+    width: 350px;
+}
+
+.left-lower-div ul img{
+    margin-top: 6px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+.left-lower-div ul span{
+    margin-left: 10px;
+    font-size: 18px;
+    margin-top: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.right-div{
+    width: 100%;
+}
+
+.not-selected-div1 img{
+    margin-top: 10%;
+    border-radius: 100%;
+    width: 250px;
+    height: 230px;
+}
+
+.not-selected-div1 p{
+    font-size: 28px;
+}
