@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import logoImage from '../../images/logo.jpg'
 import sideImage from '../../images/sideimage.JPG'
 import {connect} from 'react-redux'
+import Button from '@material-ui/core/Button';
 import { set_data, facebook_login } from '../../store/Action'
 class Home extends React.Component{
     render(){
@@ -23,6 +24,13 @@ class Home extends React.Component{
                                 <i class="fa fa-facebook-f"></i>
                                 Login with Facebook
                             </button>
+                            <Button variant="contained" disabled>
+                                Phone
+                            </Button>
+                            <Button variant="contained" disabled>
+                                Google
+                            </Button>
+                            <p style={{fontSize: 16,marginTop: 50, textAlign: "center"}}>We Will never share your personal Data to anyone</p>
                         </div>
                         <div className='sub-content2'>
                             <img src={sideImage} alt='Chatting Gallery' />
