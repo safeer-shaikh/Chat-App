@@ -1,5 +1,6 @@
 import React from 'react'
 import './chat.css'
+import Input from '@material-ui/core/Input';
 import emptyDivPic from '../../images/emptyDivPic.JPG'
 import {get_users} from '../../store/Action'
 import {connect} from 'react-redux'
@@ -27,6 +28,9 @@ class Chat extends React.Component{
     }
 
     send_message = () => {
+        this.setState({
+            message: '',
+        })
         let user = this.props.current_user
         let chat_with = this.state.chat_with
         let merge_uid = this.merge_uid(user.uid,chat_with.uid)
@@ -96,23 +100,31 @@ class Chat extends React.Component{
                         {/* <h3>Chat</h3> */}
                         {
                             Object.keys(this.state.chat_with).length ? 
-                            <div>
-                                <h4>
+                            <div className='user-content' >
+                                <div className='user-content-div'>
                                     <img src={this.state.chat_with.profile}  alt='profile' width='20' height='20'/>
-                                    {this.state.chat_with.name}
-                                </h4>
+                                    <span>
+                                        {this.state.chat_with.name}
+                                    </span>
+                                </div>
                                 <div className='chat-content'>
                                     <ul>
                                     {
                                         this.state.chats.map((v,i)=>{
                                             return(
-                                                <li key={i} style={{color: v.uid === user.uid ? 'red' : "green", textAlign: v.uid === user.uid ? 'right' : 'left'}}>{v.message}</li>
+                                                <li key={i} style={{color: v.uid === user.uid ? 'red' : "green", textAlign: v.uid === user.uid ? 'right' : 'left'}}>
+                                                    <span style={{backgroundColor: v.uid === user.uid ? 'darkblue' : 'white',color: v.uid === user.uid ? 'white' : "black"}}>
+                                                        {v.message}
+                                                    </span>
+                                                </li>
                                             )
                                         })
                                     }
                                     </ul>
-                                    <input value={this.state.message} onChange={(e)=>this.setState({message: e.target.value})} type='text' placeholder='type your message...' />
-                                    <button onClick={()=>this.send_message()}>Send</button>
+                                    <div className='input-things'>
+                                        <Input className='input' value={this.state.message} onChange={(e)=>this.setState({message: e.target.value})} type='text' placeholder='type your message...'  inputProps={{ 'aria-label': 'description' }} />
+                                        <button onClick={()=>this.send_message()}>Send</button>
+                                    </div>
                                 </div>
                             </div>
                             :

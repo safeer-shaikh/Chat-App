@@ -45,6 +45,7 @@ body{
     border: 0px solid #fff;
     background-color: #fff;
     border-bottom: 1px solid lightgray;
+    border-right: rgba(36, 39, 73, 0.904);
 }
 
 .left-lower-div ul button:hover{
@@ -75,14 +76,47 @@ body{
 .right-div{
     width: 100%;
     position: relative;
+    background-color: rgb(228, 226, 226);
+    /* background-image: url(../../images/chatBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+}
+
+.user-content{
+    height: 80px;
+    float: left;
+    width: 100%;
+    z-index: 10;
+    border-left: 1px solid #fff;
+}
+
+.user-content-div{
+    display: flex;
+    background-color: #fff;
+    border-radius: 40px;
+}
+.user-content img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 10px;
+    margin-top: 0px;
+}
+
+.user-content span{
+    margin-top: 30px;
+    font-size: 20px;
+    color: #303030;
 }
 
 .chat-content{
     position: absolute;
     bottom: 0;
     right: 1;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     width: 95%;
+    z-index: 9;
 }
 
 .chat-content ul{
@@ -90,6 +124,22 @@ body{
     padding: 0px 40px;
     width: 94%;
 }
+
+.input-things{
+    background-color: #fff;
+    width: 100%;
+    height: 60px;
+    margin-left: 20px;
+    border-radius: 50px;
+}
+
+.input{
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 90%;
+}
+
+
 
 .not-selected-div1 img{
     margin-top: 10%;

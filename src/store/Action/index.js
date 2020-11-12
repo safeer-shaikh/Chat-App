@@ -34,7 +34,7 @@ const facebook_login = (history)=>{
                     type: "SETUSER",
                     payload: create_user
                 })
-                alert('User Login Successful!')
+                // alert('User Login Successful!')
                 history.push('/chat')
             })
             // console.log('user==>',create_user)
