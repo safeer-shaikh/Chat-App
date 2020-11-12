@@ -74,6 +74,21 @@ body{
 
 .right-div{
     width: 100%;
+    position: relative;
+}
+
+.chat-content{
+    position: absolute;
+    bottom: 0;
+    right: 1;
+    margin-bottom: 100px;
+    width: 95%;
+}
+
+.chat-content ul{
+    list-style-type: none;
+    padding: 0px 40px;
+    width: 94%;
 }
 
 .not-selected-div1 img{

@@ -101,17 +101,19 @@ class Chat extends React.Component{
                                     <img src={this.state.chat_with.profile}  alt='profile' width='20' height='20'/>
                                     {this.state.chat_with.name}
                                 </h4>
-                                <ul>
-                                {
-                                    this.state.chats.map((v,i)=>{
-                                        return(
-                                            <li key={i} style={{color: v.uid === user.uid ? 'red' : "green",}}>{v.message}</li>
-                                        )
-                                    })
-                                }
-                                </ul>
-                                <input value={this.state.message} onChange={(e)=>this.setState({message: e.target.value})} type='text' placeholder='type your message...' />
-                                <button onClick={()=>this.send_message()}>Send</button>
+                                <div className='chat-content'>
+                                    <ul>
+                                    {
+                                        this.state.chats.map((v,i)=>{
+                                            return(
+                                                <li key={i} style={{color: v.uid === user.uid ? 'red' : "green", textAlign: v.uid === user.uid ? 'right' : 'left'}}>{v.message}</li>
+                                            )
+                                        })
+                                    }
+                                    </ul>
+                                    <input value={this.state.message} onChange={(e)=>this.setState({message: e.target.value})} type='text' placeholder='type your message...' />
+                                    <button onClick={()=>this.send_message()}>Send</button>
+                                </div>
                             </div>
                             :
                             <div>
