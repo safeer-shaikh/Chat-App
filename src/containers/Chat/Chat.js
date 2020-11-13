@@ -112,8 +112,16 @@ class Chat extends React.Component{
                                     {
                                         this.state.chats.map((v,i)=>{
                                             return(
-                                                <li key={i} style={{color: v.uid === user.uid ? 'red' : "green", textAlign: v.uid === user.uid ? 'right' : 'left'}}>
-                                                    <span style={{backgroundColor: v.uid === user.uid ? 'darkblue' : 'white',color: v.uid === user.uid ? 'white' : "black"}}>
+                                                <li key={i} style={{color: v.uid === user.uid ? 'red' : "green",
+                                                textAlign: v.uid === user.uid ? 'right' : 'left'}}>
+                                                    <span style={{backgroundColor: v.uid === user.uid ? 
+                                                        'darkblue' : 'white',
+                                                        color: v.uid === user.uid ?
+                                                        'white' : "black",
+                                                        borderBottomRightRadius: v.uid === user.uid ?
+                                                        '0px' : '9px',
+                                                        borderBottomLeftRadius: v.uid === user.uid ?
+                                                        '9px' : '0px',}}>
                                                         {v.message}
                                                     </span>
                                                 </li>
@@ -123,7 +131,7 @@ class Chat extends React.Component{
                                     </ul>
                                     <div className='input-things'>
                                         <Input className='input' value={this.state.message} onChange={(e)=>this.setState({message: e.target.value})} type='text' placeholder='type your message...'  inputProps={{ 'aria-label': 'description' }} />
-                                        <button onClick={()=>this.send_message()}>Send</button>
+                                        <button onClick={()=>this.send_message()}><i class="fa fa-paper-plane"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +142,8 @@ class Chat extends React.Component{
                                         <img src={emptyDivPic} alt='chatting' />
                                         <p>Stay connected to the world</p>
                                         <div>________________________</div>
-                                        <span>You have connected Using Facebook Authentication,<br /> We will never share your personal data with anyone!</span>
+                                        <span>You have connected Using Facebook Authentication,<br /> 
+                                        We will never share your personal data with anyone!</span>
                                     </center>
                                 </div>
                             </div>

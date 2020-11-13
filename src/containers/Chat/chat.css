@@ -125,6 +125,18 @@ body{
     width: 94%;
 }
 
+.chat-content li{
+    margin-top: 13px;
+}
+
+.chat-content span{
+    max-width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+
 .input-things{
     background-color: #fff;
     width: 100%;
@@ -139,7 +151,21 @@ body{
     width: 90%;
 }
 
+.input-things button{
+    width: 40px;
+    height: 30px;
+    border: 0px solid;
+    background-color: #fff;
+}
 
+.input-things button i{
+    font-size: 20px;
+    color: rgba(21, 27, 87, 0.904) ;
+}
+
+.input-things button:hover{
+    cursor: pointer;
+}
 
 .not-selected-div1 img{
     margin-top: 10%;
@@ -150,4 +176,8 @@ body{
 
 .not-selected-div1 p{
     font-size: 28px;
+}
+
+.not-selected-div1 span{
+    color: rgb(133, 130, 130);
 }

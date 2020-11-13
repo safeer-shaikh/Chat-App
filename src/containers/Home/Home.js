@@ -30,7 +30,7 @@ class Home extends React.Component{
                             <Button variant="contained" disabled>
                                 Google
                             </Button>
-                            <p style={{fontSize: 16,marginTop: 50, textAlign: "center"}}>We Will never share your personal Data to anyone</p>
+                            <p style={{fontSize: 16,marginTop: 50, textAlign: "center", color: "gray"}}>We Will never share your personal Data to anyone</p>
                         </div>
                         <div className='sub-content2'>
                             <img src={sideImage} alt='Chatting Gallery' />
