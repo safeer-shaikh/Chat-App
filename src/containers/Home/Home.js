@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import logoImage from '../../images/logo.jpg'
 import sideImage from '../../images/sideimage.JPG'
 import {connect} from 'react-redux'
+import Particles from 'react-particles-js';
 import Button from '@material-ui/core/Button';
 import { set_data, facebook_login } from '../../store/Action'
 class Home extends React.Component{
@@ -11,6 +12,27 @@ class Home extends React.Component{
         // console.log('home props=>',this.props)
         return(
             <div className='body'>
+                <Particles
+                    style={{position: 'absolute', zIndex: -1,}}
+                    params={{
+                        "particles": {
+                            "number": {
+                                "value": 100
+                            },
+                            "size": {
+                                "value": 4
+                            }
+                        },
+                        "interactivity": {
+                            "events": {
+                                "onhover": {
+                                    "enable": true,
+                                    "mode": "repulse"
+                                }
+                            }
+                        }
+                    }} 
+                    />
                 <div className='sub-body'>
                     <div className='heading'>
                         <Link to='/'><img src={logoImage} alt='logo' width='60' height='60' /></Link>
