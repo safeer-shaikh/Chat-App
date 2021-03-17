@@ -17,7 +17,7 @@ class Home extends React.Component{
                     params={{
                         "particles": {
                             "number": {
-                                "value": 100
+                                "value": 120
                             },
                             "size": {
                                 "value": 4
@@ -55,7 +55,8 @@ class Home extends React.Component{
                             <p style={{fontSize: 16,marginTop: 50, textAlign: "center", color: "gray"}}>We Will never share your personal Data to anyone</p>
                         </div>
                         <div className='sub-content2'>
-                            <img src={sideImage} alt='Chatting Gallery' />
+                            {/* <img src={sideImage} alt='Chatting Gallery' /> */}
+                            
                         </div>
                     </div>
                 </div>

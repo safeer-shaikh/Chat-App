@@ -31,7 +31,7 @@ body{
 }
 .content{
     margin-top: 40px;
-    background-color: rgba(214, 216, 218, 0.9);
+    background-color: rgba(214, 216, 218, 0.85);
     width: 60%;
     margin-left: 20%;
     border: 1px solid gray;
@@ -102,4 +102,37 @@ body{
 .material-btn{
     width: 80px;
     margin-top: 20px;
+}
+
+.sub-content2{
+    /* width: 100px; */
+    /* height: 100px; */    
+    background: red;
+    position: relative;
+    animation: mymove 25s infinite;
+    margin-top: 60px;
+    width: 50%;
+    height: 45vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+}
+
+@keyframes mymove {
+    0%   {background-image: url(../../Assets/images/sideimage.JPG);}
+    25%  {background-image: url(../../Assets/images/slider3.jpg);}
+    50%  {
+            background-image: url(../../Assets/images/slider2.jpg); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    75%  {
+            background-image: url(../../Assets/images/slider4.jpg); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    100% {background-image: url(../../Assets/images/slider5.jpg);}
 }
