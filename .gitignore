@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/src/Assets/fontawesome-pro-5.15.1-web
+/src/Assets/fontFamily
 
 # testing
 /coverage

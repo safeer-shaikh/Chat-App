@@ -1,8 +1,8 @@
 import React from 'react'
 import './home.css'
 import {Link} from 'react-router-dom'
-import logoImage from '../../images/logo.jpg'
-import sideImage from '../../images/sideimage.JPG'
+// import logoImage from '../../Assets/images/logo.png'
+import sideImage from '../../Assets/images/sideimage.JPG'
 import {connect} from 'react-redux'
 import Particles from 'react-particles-js';
 import Button from '@material-ui/core/Button';
@@ -30,13 +30,13 @@ class Home extends React.Component{
                                     "mode": "repulse"
                                 }
                             }
-                        }
+                        },
                     }} 
                     />
                 <div className='sub-body'>
                     <div className='heading'>
-                        <Link to='/'><img src={logoImage} alt='logo' width='60' height='60' /></Link>
-                        <h3>Talkie Web</h3>
+                        {/* <Link to='/'><img src={logoImage} alt='logo' width='60' height='60' /></Link> */}
+                        <h2>Talkie Web</h2>
                     </div>
                     {/* <button onClick={()=>this.props.set_data()} >check console</button> */}
                     <div className='content'>
@@ -46,10 +46,10 @@ class Home extends React.Component{
                                 <i class="fa fa-facebook-f"></i>
                                 Login with Facebook
                             </button>
-                            <Button variant="contained" disabled>
+                            <Button variant="contained" disabled className='disabled_btn'>
                                 Phone
                             </Button>
-                            <Button variant="contained" disabled>
+                            <Button className='disabled_btn' variant="contained" disabled >
                                 Google
                             </Button>
                             <p style={{fontSize: 16,marginTop: 50, textAlign: "center", color: "gray"}}>We Will never share your personal Data to anyone</p>

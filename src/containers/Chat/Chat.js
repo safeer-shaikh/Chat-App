@@ -1,7 +1,7 @@
 import React from 'react'
 import './chat.css'
 import Input from '@material-ui/core/Input';
-import emptyDivPic from '../../images/emptyDivPic.JPG'
+import emptyDivPic from '../../Assets/images/emptyDivPic.JPG'
 import {get_users} from '../../store/Action'
 import {connect} from 'react-redux'
 import firebase from '../../config/firebase'
