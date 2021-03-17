@@ -63,7 +63,6 @@ class Chat extends React.Component{
     componentDidMount(){
         this.props.get_users()
     }
-
     render(){
         // console.log('props==>',this.props)
         // console.log('fireabase users==>',this.props.users)
