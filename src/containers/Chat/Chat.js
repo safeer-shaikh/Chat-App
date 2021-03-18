@@ -19,7 +19,7 @@ class Chat extends React.Component{
     chat=(user, index)=> {
         console.log(this.state.chat_with)
         if(user.name == this.state.chat_with.name){
-            
+
         }else{
             this.setState({
                 chat_with: user
@@ -33,18 +33,22 @@ class Chat extends React.Component{
     }
 
     send_message = () => {
-        this.setState({
-            message: '',
-        })
-        let user = this.props.current_user
-        let chat_with = this.state.chat_with
-        let merge_uid = this.merge_uid(user.uid,chat_with.uid)
+        if(this.state.message == ''){
 
-        firebase.database().ref('/').child(`chats/${merge_uid}`).push({
-            message: this.state.message,
-            name: user.name,
-            uid: user.uid
-        })
+        }else{
+            this.setState({
+                message: '',
+            })
+            let user = this.props.current_user
+            let chat_with = this.state.chat_with
+            let merge_uid = this.merge_uid(user.uid,chat_with.uid)
+
+            firebase.database().ref('/').child(`chats/${merge_uid}`).push({
+                message: this.state.message,
+                name: user.name,
+                uid: user.uid
+            })
+        }
     }
 
     get_message = (uid) => {
@@ -119,7 +123,7 @@ class Chat extends React.Component{
                                                 <li key={i} style={{color: v.uid === user.uid ? 'red' : "green",
                                                 textAlign: v.uid === user.uid ? 'right' : 'left'}}>
                                                     <span style={{backgroundColor: v.uid === user.uid ? 
-                                                        'darkblue' : 'white',
+                                                        '#333' : 'white',
                                                         color: v.uid === user.uid ?
                                                         'white' : "black",
                                                         borderBottomRightRadius: v.uid === user.uid ?
