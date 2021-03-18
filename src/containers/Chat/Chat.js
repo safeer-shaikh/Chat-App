@@ -16,14 +16,19 @@ class Chat extends React.Component{
         }
     }
 
-    chat=(user)=> {
-        this.setState({
-            chat_with: user
-        })
-        let current_user = this.props.current_user
-        let merge_uid = this.merge_uid(current_user.uid,user.uid)
-        console.log(merge_uid)
-        this.get_message(merge_uid)
+    chat=(user, index)=> {
+        console.log(this.state.chat_with)
+        if(user.name == this.state.chat_with.name){
+            
+        }else{
+            this.setState({
+                chat_with: user
+            })
+            let current_user = this.props.current_user
+            let merge_uid = this.merge_uid(current_user.uid,user.uid)
+            console.log(merge_uid)
+            this.get_message(merge_uid)
+        }
         
     }
 
@@ -82,8 +87,8 @@ class Chat extends React.Component{
                                 {this.props.users.map((v,i)=>{
                                     return(
                                         v.uid !== user.uid &&
-                                        <button onClick={()=>this.chat(v)}>
-                                            <li style={{display: "flex"}} key={i}>
+                                        <button onClick={()=>this.chat(v,i)}>
+                                            <li style={{display: "flex"}} key={i} id={i}>
                                                 <img src={v.profile}  alt='profile' width='20' height='20'/>
                                                 <span>
                                                     {v.name}

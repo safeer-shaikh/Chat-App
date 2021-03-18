@@ -1,6 +1,6 @@
 body{
-    /* overflow-x: hidden;
-    overflow-y: hidden; */
+    /* overflow-x: hidden; */
+    overflow-y: hidden; 
     font-family: 'Poppins-Medium';
 }
 
@@ -102,7 +102,6 @@ body{
     float: left;
     width: 100%;
     z-index: 10;
-    border-left: 1px solid #fff;
 }
 
 .user-content-div{
